@@ -20,15 +20,6 @@ export default function RoundedComponent({
   let rightRotation = angle <= 180 ? angle : 180;
   let leftRotation = angle > 180 ? angle - 180 : 0;
 
-  /*console.log(
-    "percent",
-    percent,
-    "rightRotation",
-    rightRotation,
-    "leftRotation",
-    leftRotation
-  );*/
-
   return (
     <View style={styles.containerRoundedComponent}>
       <View style={styles.circleContainer}>

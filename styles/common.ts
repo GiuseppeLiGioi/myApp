@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const deviceWidth = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
   containerRoundedComponent: {
@@ -10,17 +12,17 @@ const styles = StyleSheet.create({
 
   circleContainer: {
     position: "relative",
-    width: 200,
-    height: 200,
+    width: deviceWidth > 400 ? 300 : 200,
+    height: deviceWidth > 400 ? 300 : 200,
     justifyContent: "center",
     alignItems: "center",
   },
 
   containerOuterCircle: {
-    borderRadius: 100,
-    width: 200,
-    height: 200,
-    borderWidth: 5,
+    borderRadius: deviceWidth > 400 ? 150 : 100,
+    width: deviceWidth > 400 ? 300 : 200,
+    height: deviceWidth > 400 ? 300 : 200,
+    borderWidth: deviceWidth > 400 ? 7 : 5,
     borderColor: "gray",
   },
 
@@ -47,27 +49,27 @@ const styles = StyleSheet.create({
   },
 
   innerSemiCircle: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    borderWidth: 5,
+    width: deviceWidth > 400 ? 300 : 200,
+    height: deviceWidth > 400 ? 300 : 200,
+    borderRadius: deviceWidth > 400 ? 150 : 100,
+    borderWidth: deviceWidth > 400 ? 7 : 5,
   },
 
   containerContent: {
     position: "absolute",
-    top: 70,
+    top: deviceWidth > 400 ? 105 : 70,
     left: 0,
     right: 0,
     bottom: 0,
   },
   contentInner: {
-    fontSize: 48,
+    fontSize: deviceWidth > 400 ? 72 : 48,
     textAlign: "center",
   },
 
   contentOuter: {
     marginTop: 12,
-    fontSize: 32,
+    fontSize: deviceWidth > 400 ? 48 : 32,
     textAlign: "center",
   },
 });
