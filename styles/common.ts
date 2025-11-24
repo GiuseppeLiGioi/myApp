@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 100,
     borderWidth: 5,
-    top: 0,
   },
 
   containerContent: {
