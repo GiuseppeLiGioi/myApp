@@ -5,7 +5,7 @@ export default function HomeScreen() {
     <View style={{ flex: 1 }}>
       <Text>Sono Home</Text>
       <RoundedComponent
-        inputValue={70}
+        inputValue={100}
         maxValue={100}
         title={"Raiting"}
         color={"#4b90f8ff"}
