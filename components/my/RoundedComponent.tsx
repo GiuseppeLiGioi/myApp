@@ -17,21 +17,11 @@ export default function RoundedComponent({
 }: RoundedComponentProps) {
   const percent = (inputValue / maxValue) * 100;
 
-  const angle = (percent / 100) * 360;
-  let rightRotation = angle <= 180 ? angle : 180;
-  let leftRotation = angle > 180 ? angle - 180 : 0;
+  const rightRotation = percent <= 50 ? (percent / 50) * 180 - 36 : 180;
+  const leftRotation = percent > 50 ? ((percent - 50) / 50) * 180 - 36 : 0;
 
   const rightColor = percent > 0 ? color : "transparent";
   const leftColor = percent > 50 ? color : "transparent";
-
-  /*console.log(
-    "percent",
-    percent,
-    "rightRotation",
-    rightRotation,
-    "leftRotation",
-    leftRotation
-  );*/
 
   return (
     <View style={styles.containerRoundedComponent}>
@@ -45,7 +35,7 @@ export default function RoundedComponent({
                 borderRightColor: "transparent",
                 borderLeftColor: rightColor,
                 borderTopColor: rightColor,
-                borderBottomColor: rightColor,
+                borderBottomColor: percent < 25 ? "transparent" : rightColor,
                 transform: [{ rotate: `${rightRotation}deg` }],
               },
             ]}
@@ -58,7 +48,7 @@ export default function RoundedComponent({
               {
                 borderLeftColor: "transparent",
                 borderRightColor: leftColor,
-                borderTopColor: leftColor,
+                borderTopColor: percent > 50 ? "transparent" : leftColor,
                 borderBottomColor: leftColor,
                 transform: [{ rotate: `${leftRotation}deg` }],
               },
