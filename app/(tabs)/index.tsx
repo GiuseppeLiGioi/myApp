@@ -6,7 +6,7 @@ export default function HomeScreen() {
       <Text>Sono Home</Text>
       <RoundedComponent
         inputValue={70}
-        maxValue={70}
+        maxValue={100}
         title={"Raiting"}
         color={"#4b90f8ff"}
         valueUnit={"%"}

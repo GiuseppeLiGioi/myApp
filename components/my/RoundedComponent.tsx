@@ -20,9 +20,6 @@ export default function RoundedComponent({
   let rightRotation = angle <= 180 ? angle : 180;
   let leftRotation = angle > 180 ? angle - 180 : 0;
 
-  const rightColor = percent > 0 ? color : "transparent";
-  const leftColor = percent > 50 ? color : "transparent";
-
   /*console.log(
     "percent",
     percent,
@@ -42,9 +39,9 @@ export default function RoundedComponent({
               styles.innerSemiCircle,
               {
                 borderRightColor: "transparent",
-                borderLeftColor: rightColor,
-                borderTopColor: rightColor,
-                borderBottomColor: rightColor,
+                borderLeftColor: color,
+                borderTopColor: color,
+                borderBottomColor: color,
                 transform: [{ rotate: `${rightRotation}deg` }],
               },
             ]}
@@ -56,9 +53,9 @@ export default function RoundedComponent({
               styles.innerSemiCircle,
               {
                 borderLeftColor: "transparent",
-                borderRightColor: leftColor,
-                borderTopColor: leftColor,
-                borderBottomColor: leftColor,
+                borderRightColor: color,
+                borderTopColor: color,
+                borderBottomColor: color,
                 transform: [{ rotate: `${leftRotation}deg` }],
               },
             ]}
