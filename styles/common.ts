@@ -8,12 +8,19 @@ const styles = StyleSheet.create({
     padding: 12,
   },
 
-  containerOuterCircle: {
+  circleContainer: {
     position: "relative",
+    width: 200,
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  containerOuterCircle: {
     borderRadius: 100,
     width: 200,
     height: 200,
-    borderWidth: 2,
+    borderWidth: 5,
     borderColor: "gray",
   },
 
@@ -24,6 +31,8 @@ const styles = StyleSheet.create({
     width: "50%",
     height: "100%",
     overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "flex-start",
   },
 
   containerInnerCircleRight: {
@@ -33,10 +42,11 @@ const styles = StyleSheet.create({
     width: "50%",
     height: "100%",
     overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "flex-end",
   },
 
   innerSemiCircle: {
-    position: "absolute",
     width: 200,
     height: 200,
     borderRadius: 100,
@@ -44,14 +54,21 @@ const styles = StyleSheet.create({
     top: 0,
   },
 
-  containerContent: {},
+  containerContent: {
+    position: "absolute",
+    top: 70,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
   contentInner: {
-    fontSize: 16,
+    fontSize: 48,
     textAlign: "center",
   },
 
   contentOuter: {
-    fontSize: 16,
+    marginTop: 12,
+    fontSize: 32,
     textAlign: "center",
   },
 });
