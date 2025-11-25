@@ -2,9 +2,9 @@ import RoundedComponent from "@/components/my/RoundedComponent";
 import { View } from "react-native";
 export default function HomeScreen() {
   return (
-    <View style={{ flex: 1, padding: 12 }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <RoundedComponent
-        inputValue={60}
+        inputValue={92}
         maxValue={100}
         title={"Rating"}
         color={"#1EA2F5"}

@@ -1,5 +1,5 @@
 import styles from "@/styles/common";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Animated, Text, View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { Path, Svg } from "react-native-svg";
@@ -19,9 +19,16 @@ export default function RoundedComponent({
   valueUnit,
   checked,
 }: RoundedComponentProps) {
+  const [containerSize, setContainerSize] = useState<number>(0);
   const percent: number = (inputValue / maxValue) * 100;
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fontSizeValue = containerSize * 0.25;
+  const fontSizeSymbol = containerSize * 0.12;
+  const fontSizeText = containerSize * 0.18;
+  const borderSize = containerSize * 0.03;
+  const topPosition = -(containerSize * 0.02);
+  const innerBoxSize = containerSize * 0.6;
 
   useEffect(() => {
     if (percent === 100) {
@@ -36,10 +43,13 @@ export default function RoundedComponent({
   }, [percent]);
 
   return (
-    <View style={styles.containerRoundedComponent}>
+    <View
+      style={styles.containerRoundedComponent}
+      onLayout={(e) => setContainerSize(e.nativeEvent.layout.width)}
+    >
       <AnimatedCircularProgress
-        size={200}
-        width={8}
+        size={containerSize}
+        width={borderSize}
         fill={percent}
         tintColor={color}
         lineCap="round"
@@ -80,12 +90,29 @@ export default function RoundedComponent({
                 </Svg>
               </Animated.View>
             ) : (
-              <View style={styles.containerTextValue}>
-                <Text style={[styles.textValue, { color: color }]}>
+              <View
+                style={[
+                  styles.containerTextValue,
+                  { width: innerBoxSize, aspectRatio: 1 },
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.textValue,
+                    { color: color, fontSize: fontSizeValue },
+                  ]}
+                >
                   {percent}
                 </Text>
                 <View style={styles.containerUnit}>
-                  <Text style={styles.textUnit}>{valueUnit}</Text>
+                  <Text
+                    style={[
+                      styles.textUnit,
+                      { fontSize: fontSizeSymbol, top: topPosition },
+                    ]}
+                  >
+                    {valueUnit}
+                  </Text>
                 </View>
               </View>
             )}
@@ -93,7 +120,9 @@ export default function RoundedComponent({
         )}
       </AnimatedCircularProgress>
 
-      <Text style={styles.textBottom}>{title}</Text>
+      <Text style={[styles.textBottom, { fontSize: fontSizeText }]}>
+        {title}
+      </Text>
     </View>
   );
 }
