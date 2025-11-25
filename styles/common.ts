@@ -4,7 +4,7 @@ const deviceWidth = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
   containerRoundedComponent: {
-    width: "70%",
+    width: "100%",
     aspectRatio: 1,
     justifyContent: "center",
     alignItems: "center",
