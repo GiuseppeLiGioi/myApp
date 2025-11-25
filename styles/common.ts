@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   textValue: {
     fontSize: deviceWidth > 400 ? 54 : 42,
     fontWeight: "600",
-    transform: [{ scaleY: 1.2 }],
+    transform: [{ scaleY: 1.25 }],
   },
 
   containerTextValue: {

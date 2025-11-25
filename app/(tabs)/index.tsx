@@ -4,7 +4,7 @@ export default function HomeScreen() {
   return (
     <View style={{ flex: 1, padding: 12 }}>
       <RoundedComponent
-        inputValue={50}
+        inputValue={60}
         maxValue={100}
         title={"Rating"}
         color={"#1EA2F5"}
