@@ -4,11 +4,11 @@ export default function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <RoundedComponent
-        inputValue={92}
+        inputValue={100}
         maxValue={100}
         title={"Rating"}
         color={"#1EA2F5"}
-        checked={false}
+        checked={true}
         valueUnit={"%"}
       />
     </View>

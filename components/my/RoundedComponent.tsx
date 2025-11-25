@@ -29,6 +29,9 @@ export default function RoundedComponent({
   const borderSize = containerSize * 0.03;
   const topPosition = -(containerSize * 0.02);
   const innerBoxSize = containerSize * 0.6;
+  const widthSvg = containerSize * 0.8;
+  const strok = containerSize * 0.01;
+  const animatedWidth = containerSize * 0.8;
 
   useEffect(() => {
     if (percent === 100) {
@@ -70,20 +73,20 @@ export default function RoundedComponent({
             {percent === 100 && checked === true ? (
               <Animated.View
                 style={{
-                  width: 150,
-                  height: 150,
-                  borderRadius: 75,
+                  width: animatedWidth,
+                  height: animatedWidth,
+                  borderRadius: animatedWidth / 2,
                   backgroundColor: "#54B435",
                   justifyContent: "center",
                   alignItems: "center",
                   opacity: fadeAnim,
                 }}
               >
-                <Svg width={60} height={60} viewBox="0 0 40 40">
+                <Svg width={widthSvg} height={widthSvg} viewBox="0 0 40 40">
                   <Path
                     d="M12.5 20l5 5 9-9"
                     stroke="#fff"
-                    strokeWidth={4}
+                    strokeWidth={strok}
                     fill="none"
                     strokeLinecap="round"
                   />
