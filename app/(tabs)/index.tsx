@@ -1,9 +1,8 @@
 import RoundedComponent from "@/components/my/RoundedComponent";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 export default function HomeScreen() {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Sono Home</Text>
+    <View style={{ flex: 1, padding: 12 }}>
       <RoundedComponent
         inputValue={100}
         maxValue={100}

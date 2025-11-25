@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
     fontSize: deviceWidth > 400 ? 48 : 32,
     textAlign: "center",
   },
+
+  containerInnerCircle: {},
 });
 
 export default styles;
