@@ -8,6 +8,7 @@ export default function HomeScreen() {
         maxValue={100}
         title={"Raiting"}
         color={"#4b90f8ff"}
+        checked={false}
         valueUnit={"%"}
       />
     </View>

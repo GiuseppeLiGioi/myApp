@@ -9,6 +9,7 @@ type RoundedComponentProps = {
   title: string;
   color: string;
   valueUnit: string;
+  checked: boolean;
 };
 export default function RoundedComponent({
   inputValue,
@@ -16,6 +17,7 @@ export default function RoundedComponent({
   title,
   color,
   valueUnit,
+  checked,
 }: RoundedComponentProps) {
   const percent: number = (inputValue / maxValue) * 100;
 
