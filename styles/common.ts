@@ -75,18 +75,18 @@ const styles = StyleSheet.create({
 
   containerInnerCircle: {},
   textBottom: {
-    fontSize: 28,
+    fontSize: deviceWidth > 400 ? 32 : 28,
     textAlign: "center",
     marginTop: 16,
   },
 
   textUnit: {
-    fontSize: 28,
+    fontSize: deviceWidth > 400 ? 32 : 28,
     color: "#AAA9B0",
     fontWeight: "600",
   },
   textValue: {
-    fontSize: 42,
+    fontSize: deviceWidth > 400 ? 54 : 42,
     fontWeight: "600",
     transform: [{ scaleY: 1.2 }],
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   containerUnit: {
     marginLeft: 2,
     position: "relative",
-    top: -6,
+    top: deviceWidth > 400 ? -10 : -6,
     transform: [{ scaleX: 1.1 }],
   },
 });
