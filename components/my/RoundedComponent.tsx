@@ -2,7 +2,7 @@ import styles from "@/styles/common";
 import { useEffect, useRef } from "react";
 import { Animated, Text, View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { Circle, Path, Svg } from "react-native-svg";
+import { Path, Svg } from "react-native-svg";
 type RoundedComponentProps = {
   inputValue: number;
   maxValue: number;
@@ -42,9 +42,8 @@ export default function RoundedComponent({
         width={8}
         fill={percent}
         tintColor={color}
-        renderCap={({ center }) => (
-          <Circle cx={center.x} cy={center.y - 1} r={8} fill="blue" />
-        )}
+        lineCap="round"
+        backgroundColor="#e0f2faff"
       >
         {() => (
           <View
@@ -58,7 +57,7 @@ export default function RoundedComponent({
               alignItems: "center",
             }}
           >
-            {percent === 100 ? (
+            {percent === 100 && checked === true ? (
               <Animated.View
                 style={{
                   width: 150,
@@ -81,18 +80,20 @@ export default function RoundedComponent({
                 </Svg>
               </Animated.View>
             ) : (
-              <Text style={{ fontSize: 32, textAlign: "center" }}>
-                {Math.round(percent)}
-                {valueUnit}
-              </Text>
+              <View style={styles.containerTextValue}>
+                <Text style={[styles.textValue, { color: color }]}>
+                  {percent}
+                </Text>
+                <View style={styles.containerUnit}>
+                  <Text style={styles.textUnit}>{valueUnit}</Text>
+                </View>
+              </View>
             )}
           </View>
         )}
       </AnimatedCircularProgress>
 
-      <Text style={{ fontSize: 24, textAlign: "center", marginTop: 8 }}>
-        {title}
-      </Text>
+      <Text style={styles.textBottom}>{title}</Text>
     </View>
   );
 }

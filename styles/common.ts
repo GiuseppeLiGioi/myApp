@@ -74,6 +74,37 @@ const styles = StyleSheet.create({
   },
 
   containerInnerCircle: {},
+  textBottom: {
+    fontSize: 28,
+    textAlign: "center",
+    marginTop: 16,
+  },
+
+  textUnit: {
+    fontSize: 28,
+    color: "#AAA9B0",
+    fontWeight: "600",
+  },
+  textValue: {
+    fontSize: 42,
+    fontWeight: "600",
+    transform: [{ scaleY: 1.2 }],
+  },
+
+  containerTextValue: {
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 15,
+  },
+
+  containerUnit: {
+    marginLeft: 2,
+    position: "relative",
+    top: -6,
+    transform: [{ scaleX: 1.1 }],
+  },
 });
 
 export default styles;
